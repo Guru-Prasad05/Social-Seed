@@ -1,19 +1,11 @@
-import { ApolloServer, gql } from "apollo-server";
+require("dotenv").config
+import { ApolloServer } from "apollo-server";
+import schema from "./schema";
 
-const typeDefs = gql`
-  type Query {
-    hello: String!
-  }
-`;
-const resolvers = {
-  Query: {
-    hello: () => "hello world!",
-  },
-};
+
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema
 });
 
 server

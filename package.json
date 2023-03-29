@@ -5,18 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "migrate": "npx prisma migrate dev --preview-feature",
+    "studio": "npx prisma studio"
   },
   "author": "Guru Prasad",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^2.14.0",
     "apollo-server": "^2.19.1",
-    "graphql": "^15.4.0"
+    "dotenv": "^16.0.3",
+    "graphql": "^15.4.0",
+    "graphql-tools": "^7.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@prisma/cli": "^2.14.0",
     "nodemon": "^2.0.22"
   }
 }
