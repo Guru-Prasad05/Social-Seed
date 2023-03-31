@@ -16,3 +16,15 @@ export const getUser = async (token) => {
     return null;
   }
 };
+
+export function protectedResolvers(ourResolvers) {
+  return function (root, args, context, info) {
+    if (!context.loggedInUser) {
+      return {
+        ok: false,
+        error: "You must have logged in to perform this action.",
+      };
+    }
+    return ourResolvers(root, args, context, info);
+  };
+}
