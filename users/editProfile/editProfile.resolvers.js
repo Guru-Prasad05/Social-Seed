@@ -1,3 +1,4 @@
+import fs from "fs";
 import client from "../../client";
 import bcrypt from "bcrypt";
 import { protectedResolvers } from "../users.utils";
@@ -7,9 +8,18 @@ const resolverFn = async (
   { firstName, lastName, username, email, password: newPassword, bio, avatar },
   { loggedInUser }
 ) => {
-  const {filename, createReadStream}= await avatar;
-  const stream = createReadStream();
-  console.log(stream)
+  let avatarUrl = null;
+  if (avatar) {
+    const { filename, createReadStream } = await avatar;
+    const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`;
+    const readStream = createReadStream();
+    const writeStream = fs.createWriteStream(
+      process.cwd() + "/upload/" + newFilename
+    );
+    readStream.pipe(writeStream);
+    avatarUrl = `http://localhost:4000/static/${newFilename}`;
+  }
+
   let hashPassword = null;
   if (newPassword) {
     hashPassword = await bcrypt.hash(newPassword, 10);
@@ -25,6 +35,7 @@ const resolverFn = async (
       username,
       bio,
       ...(hashPassword && { password: hashPassword }),
+      ...(avatarUrl && { avatar: avatarUrl }),
     },
   });
   if (updatedUser.id) {

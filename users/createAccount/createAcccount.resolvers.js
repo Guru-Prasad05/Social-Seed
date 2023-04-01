@@ -30,7 +30,10 @@ export default {
           },
         });
       } catch (e) {
-        return e;
+        return {
+          ok: false,
+          error: "Can't create account.",
+        };
       }
     },
   },
