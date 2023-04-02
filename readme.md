@@ -20,14 +20,23 @@ Social Seed Backend
 ## Photos
 -[x] Upload Photo (Parse #)
 -[x] See Photos
--[] See Hashtags
--[] Search Photos
--[] Edit Photo
--[] Like / Unlike Photos
--[] See Photo Likes
--[] See Feed
+-[x] See Hashtags
+-[x] Search Photos
+-[x] Edit Photo
+-[x] Like / Unlike Photos
+-[x] See Photo Likes
+-[x] See Feed
+-[x] See Photo Comments
+-[x] Is Mine (DeletePhoto)
 
 ## Comments
--[] Comment on photos
--[] Edit Comments
--[] Delete Comments
+-[x] Comment on photos
+-[x] Edit Comments
+-[x] Delete Comments (is Mine)
+
+## Refactor
+-[] Mutation Response
+
+
+## Image
+-[] S3 Image Upload

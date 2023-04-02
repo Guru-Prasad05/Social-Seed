@@ -1,6 +1,6 @@
-import { hash } from "bcrypt";
 import client from "../../client";
 import { protectedResolvers } from "../../users/users.utils";
+import { processHashtag } from "../photos.utils";
 export default {
   Mutation: {
     uploadPhoto: protectedResolvers(
@@ -8,11 +8,7 @@ export default {
         let hashtagObjs = [];
         if (caption) {
           //parse caption
-          const hashtags = caption.match(/#[\w]+/g);
-          hashtagObjs = hashtags.map((hashtag) => ({
-            where: { hashtag },
-            create: { hashtag },
-          }));
+          hashtagObjs = processHashtag(caption);
           //get or create hashtag
         }
         return client.photo.create({
