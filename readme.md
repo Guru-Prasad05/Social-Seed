@@ -35,8 +35,16 @@ Social Seed Backend
 -[x] Delete Comments (is Mine)
 
 ## Refactor
--[] Mutation Response
+-[x] Mutation Response
 
 
 ## Image
--[] S3 Image Upload
+-[] Cloudinary Image Upload
+
+## DM
+-[x] See Room
+-[x] Send Message (Create Room)
+-[x] See Rooms
+-[] See Message   
+-[]  Computed Fields
+-[] Realtime Message
