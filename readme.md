@@ -39,12 +39,12 @@ Social Seed Backend
 
 
 ## Image
--[] Cloudinary Image Upload
+-[x] Cloudinary Image Upload
 
 ## DM
 -[x] See Room
 -[x] Send Message (Create Room)
 -[x] See Rooms
--[] See Message   
--[]  Computed Fields
+-[x] Computed Fields
+-[x] See (Read) Message   
 -[] Realtime Message

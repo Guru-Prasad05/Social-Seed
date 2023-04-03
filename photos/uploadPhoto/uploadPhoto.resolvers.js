@@ -1,4 +1,5 @@
 import client from "../../client";
+import { uploadPhoto } from "../../shared/shared.utils";
 import { protectedResolvers } from "../../users/users.utils";
 import { processHashtag } from "../photos.utils";
 export default {
@@ -11,9 +12,10 @@ export default {
           hashtagObjs = processHashtag(caption);
           //get or create hashtag
         }
+        const fileUrl = await uploadPhoto(file, loggedInUser.id, "upload");
         return client.photo.create({
           data: {
-            file,
+            file: fileUrl,
             caption,
             user: { connect: { id: loggedInUser.id } },
             ...(hashtagObjs.length > 0 && {

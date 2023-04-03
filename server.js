@@ -4,6 +4,9 @@ import logger from "morgan";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema.js";
 import { getUser } from "./users/users.utils.js";
+import pubsub from "./pubsub.js";
+
+console.log(pubsub)
 
 const PORT = process.env.PORT;
 

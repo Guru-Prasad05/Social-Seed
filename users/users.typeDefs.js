@@ -9,7 +9,7 @@ export default gql`
     email: String!
     bio: String
     avatar: String
-    photos:[Photo]
+    photos: [Photo]
     following: [User]
     followers: [User]
     createAt: String!
@@ -17,7 +17,6 @@ export default gql`
     totalFollowing: Int!
     totalFollowers: Int!
     isMe: Boolean!
-    isFollowing:Boolean!
+    isFollowing: Boolean!
   }
 `;
-
