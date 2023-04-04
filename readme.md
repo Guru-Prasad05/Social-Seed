@@ -47,4 +47,4 @@ Social Seed Backend
 -[x] See Rooms
 -[x] Computed Fields
 -[x] See (Read) Message   
--[] Realtime Message
+-[x] Realtime Message (graphql subscription)
