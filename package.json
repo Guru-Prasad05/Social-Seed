@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --exec babel-node server.js --delay 2",
+    "start": "node server.js",                          
     "migrate": "npx prisma migrate dev --preview-feature",
     "studio": "npx prisma studio"
   },
