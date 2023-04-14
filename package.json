@@ -4,7 +4,7 @@
   "description": "Social Seed",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js --delay 2",
+    "start": "node --exec babel-node server.js --delay 2",
     "migrate": "npx prisma migrate dev --preview-feature",
     "studio": "npx prisma studio"
   },
