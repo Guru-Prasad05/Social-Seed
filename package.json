@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Social Seed",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node --exec babel-node server.js --delay 2",
     "migrate": "npx prisma migrate dev --preview-feature",

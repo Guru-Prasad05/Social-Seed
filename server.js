@@ -1,11 +1,11 @@
 require("dotenv").config();
+const http=require("http")
 
 import express from "express";
 import logger from "morgan";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema.js";
 import { getUser } from "./users/users.utils.js";
-const http=require("http")
 const PORT = process.env.PORT;
 
 const apollo = new ApolloServer({
