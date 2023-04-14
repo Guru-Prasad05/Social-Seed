@@ -2,7 +2,7 @@ import fs from "fs";
 import client from "../../client";
 import bcrypt from "bcrypt";
 import { protectedResolvers } from "../users.utils";
-import {uploadPhoto} from "../../shared/shared.utils"
+import { uploadPhoto } from "../../shared/shared.utils";
 
 const resolverFn = async (
   _,
@@ -11,7 +11,7 @@ const resolverFn = async (
 ) => {
   let avatarUrl = null;
   if (avatar) {
-    avatarUrl= await uploadPhoto(avatar,loggedInUser.id,"avatars")
+    avatarUrl = await uploadPhoto(avatar, loggedInUser.id, "avatars");
     // const { filename, createReadStream } = await avatar;
     // const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`;
     // const readStream = createReadStream();
@@ -41,7 +41,7 @@ const resolverFn = async (
     },
   });
   if (updatedUser.id) {
-    return { ok: true };
+    return { avatar: avatarUrl, ok: true };
   } else {
     return {
       ok: false,

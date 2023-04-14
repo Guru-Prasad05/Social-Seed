@@ -13,7 +13,7 @@ export default {
           //get or create hashtag
         }
         const fileUrl = await uploadPhoto(file, loggedInUser.id, "upload");
-        return client.photo.create({
+        const result=await client.photo.create({
           data: {
             file: fileUrl,
             caption,
@@ -23,6 +23,7 @@ export default {
             }),
           },
         });
+       return result;
         //save the photo With the parsed Hashtag
         //add the photo to the hashtags
       }

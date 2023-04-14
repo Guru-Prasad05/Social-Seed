@@ -50,7 +50,7 @@ export default {
 
   Hashtag: {
     photo: ({ id }, { page }) => {
-      console.log(page);
+      
       return client.hashtag.findUnique({ where: { id } }).photo({
         take: 5,
         skip: page ? 1 : 0,
